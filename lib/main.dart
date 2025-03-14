@@ -36,7 +36,7 @@ class _UserListScreenState extends State<UserListScreen> {
 
   Future<List<User>> fetchUsers() async {
     try {
-      var response = await Dio().get('http://192.168.1.12:3000/api/v1/users/');
+      var response = await Dio().get('http://192.168.1.12:3000/api/v1/users');
       if (response.statusCode == 200) {
         List data = response.data['data'];
         return data.map((json) => User.fromJson(json)).toList();
